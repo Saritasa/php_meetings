@@ -28,6 +28,11 @@ $vs->group('Comparisons');
 
 require_once(__DIR__ . '/equality.php');
 
+// Arrays
+$vs->group('Arrays');
+
+require_once(__DIR__ . '/time_arrays_vs_fixed_arrays.php');
+
 // Execution Time.
 // *****************************************************************************
 
@@ -35,7 +40,6 @@ require_once(__DIR__ . '/equality.php');
 $vs->group('Arrays & classes');
 
 require_once(__DIR__ . '/assoc_arrays_vs_classes.php');
-require_once(__DIR__ . '/different_array_types.php');
-require_once(__DIR__ . '/string_array_and_fixed_array.php');
+require_once(__DIR__ . '/space_arrays_vs_fixed_arrays.php');
 
 $vs->display();

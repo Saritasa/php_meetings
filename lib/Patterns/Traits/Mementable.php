@@ -25,7 +25,8 @@ trait Mementable
     abstract protected function setState($state);
     
     /**
-     * Creates a memento object that encapsulates the internal state of an object.
+     * Creates a memento object that encapsulates the internal
+     * state of an originator object.
      *
      * @return \Saritasa\Patterns\Interfaces\IMemento
      */

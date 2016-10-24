@@ -10,10 +10,10 @@ interface IMemento
     /**
      * Constructor.
      *
-     * @param object $originator
+     * @param \Saritasa\Patterns\Interfaces\IMementable $originator
      * @return void
      */
-    public function __construct($originator);
+    public function __construct(IMementable $originator);
     
     /**
      * Restores the originator state.

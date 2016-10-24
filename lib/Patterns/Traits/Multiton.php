@@ -3,16 +3,16 @@
 namespace Saritasa\Patterns\Traits;
 
 /**
- * Implementation of singleton pattern.
+ * Implementation of the multiton pattern.
  */
-trait Singleton
+trait Multiton
 {
     /**
-     * The instance of singleton object.
+     * Instances of multiton objects.
      *
-     * @var static
+     * @var static[]
      */
-    private static $instance = null;
+    private static $instance = [];
 
     /**
      * Protects against creation through "new".
@@ -38,11 +38,12 @@ trait Singleton
     /**
      * Returns an instance of a class.
      *
+     * @param mixed $key The instance key.
      * @param array $params Constructor's arguments.
      * @return static
      */
-    public static function getInstance(...$params)
+    public static function getInstance($key, ...$params)
     {
-        return self::$instance ?? self::$instance = new static(...$params);
+        return self::$instance[$key] ?? self::$instance[$key] = new static($key, ...$params);
     }
 }

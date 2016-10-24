@@ -2,7 +2,7 @@
 
 namespace Saritasa\Patterns;
 
-use Saritasa\Patterns\Interfaces\IMemento;
+use Saritasa\Patterns\Interfaces\{IMemento, IMementable};
 
 /**
  * Implementation of memento object for Memento design pattern.
@@ -26,10 +26,10 @@ class Memento implements IMemento
     /**
      * Constructor.
      *
-     * @param object $originator
+     * @param \Saritasa\Patterns\Interfaces\IMementable $originator
      * @return void
      */
-    public function __construct($originator)
+    public function __construct(IMementable $originator)
     {
         $this->originator = $originator;
         $this->state = $this->call($originator, 'getState');

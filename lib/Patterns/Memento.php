@@ -27,7 +27,6 @@ class Memento implements IMemento
      * Constructor.
      *
      * @param \Saritasa\Patterns\Interfaces\IMementable $originator
-     * @return void
      */
     public function __construct(IMementable $originator)
     {

@@ -36,12 +36,13 @@ class ObjectPool implements \Countable
      * Constructor.
      *
      * @param \Saritasa\Patterns\Interfaces\IPoolObjectCreator $creator
-     * @return void
+     * @param int $maxPoolSize The maximum pool size.
      */
-    public function __construct(IPoolObjectCreator $creator)
+    public function __construct(IPoolObjectCreator $creator, int $maxPoolSize = -1)
     {
         $this->pool = new \SplStack();
         $this->creator = $creator;
+        $this->maxPoolSize = $maxPoolSize;
     }
 
     /**
@@ -68,7 +69,7 @@ class ObjectPool implements \Countable
             {
                 throw new \RuntimeException('The maximum number of poolable objects is reached.');
             }
-            return $this->creator->create();
+            return $this->creator->createPoolable();
         }
         return $this->pool->pop();
     }
@@ -90,15 +91,14 @@ class ObjectPool implements \Countable
      *
      * @return int
      */
-    public function getPoolMaxSize() : int
+    public function getMaxPoolSize() : int
     {
         return $this->maxPoolSize;
     }
     
     /**
-     * Sets the maximum pool size. If the size is negative
-     * the pool will be able to store any number of poolable
-     * objects.
+     * Sets the maximum pool size. If the size is negative the pool
+     * will be able to store any number of poolable objects.
      *
      * @param int $size
      * @return void

@@ -157,7 +157,6 @@ final class Registry implements \Serializable, IRegistry
     /**
      * Support of the deserialization of the Registry
      * @param string $data
-     * @return string
      */
     public function unserialize($data)
     {

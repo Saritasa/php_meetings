@@ -16,8 +16,6 @@ trait Singleton
 
     /**
      * Protects against creation through "new".
-     *
-     * @return void
      */
     private function __construct(){}
     
@@ -43,6 +41,6 @@ trait Singleton
      */
     public static function getInstance(...$params)
     {
-        return self::$instance ?? self::$instance = new static(...$params);
+        return static::$instance ?? (static::$instance = new static(...$params));
     }
 }

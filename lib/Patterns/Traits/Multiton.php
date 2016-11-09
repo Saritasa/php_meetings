@@ -16,8 +16,6 @@ trait Multiton
 
     /**
      * Protects against creation through "new".
-     *
-     * @return void
      */
     private function __construct(){}
     
@@ -44,6 +42,6 @@ trait Multiton
      */
     public static function getInstance($key, ...$params)
     {
-        return self::$instance[$key] ?? self::$instance[$key] = new static($key, ...$params);
+        return static::$instance[$key] ?? (static::$instance[$key] = new static($key, ...$params));
     }
 }

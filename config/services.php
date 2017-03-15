@@ -35,4 +35,8 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    // http://words.bighugelabs.com/api.php
+    'thesaurus' => [
+        'api_key' => env('THESAURUS_API_KEY')
+    ]
 ];

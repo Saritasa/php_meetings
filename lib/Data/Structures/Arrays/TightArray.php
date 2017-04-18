@@ -95,8 +95,7 @@ abstract class TightArray implements \Iterator, \ArrayAccess, \Countable
      *
      * @param int $size The initial capacity of a tight array.
      * @param bool $autoSize Determines whether the array capacity should be automatically increased.
-     * @return void
-     */     
+     */
     public function __construct($size = 0, $autoSize = true)
     {
         $this->stream = fopen('php://memory', 'r+');

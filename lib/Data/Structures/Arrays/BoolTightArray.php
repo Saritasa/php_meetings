@@ -12,7 +12,6 @@ class BoolTightArray extends TightArray
      *
      * @param int $size The initial capacity of a tight array.
      * @param bool $autoSize Determines whether the array capacity should be automatically increased.
-     * @return void
      */
     public function __construct($size = 0, $autoSize = true)
     {
